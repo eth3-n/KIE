@@ -19,11 +19,3 @@ The system allows adding, borrowing, returning, and searching for books.
 
 - **main.cpp** → Menu-driven program to run the full system  
 
----
-
-## How to Compile and Run
-1. Open a terminal in the project folder.  
-2. Compile with:
-   ```bash
-   g++ main.cpp LIB/library.cpp -o library_system
-3. Run ./library_system
