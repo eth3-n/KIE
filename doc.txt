@@ -1,0 +1,85 @@
+LIBRARY MANAGEMENT SYSTEM DOCUMENTATION
+1. PROJECT OVERVIEW
+This project implements a basic Library Management System using C++. The program allows users to:
+
+  1.Add books to the library
+  2.Display all books
+  3.Search for books by title or author
+  4.Borrow books
+  5.Return books
+
+The system is designed to be modular, separating the core library logic from the user interface and test programs. This makes the code easier to maintain, extend, and test.
+
+2. Folder and File Structure
+The project is organized in a clear and logical way:
+pro/ — This is the main project folder containing all the files and subfolders.
+LIB/ — This subfolder contains the library code:
+library.h → The header file where the Library class and Book struct are declared.
+library.cpp → The source file that implements all the functions of the Library class.
+tests/ — This subfolder contains separate test programs to check different functionalities of the library system:
+add.cpp → Tests adding new books and displaying them.
+borrowreturn.cpp → Tests borrowing and returning books.
+search.cpp → Tests searching books by title or author.
+main.cpp — The main program that provides a menu-driven interface for users to interact with the library system.
+
+3. Design Choices
+
+Library Class (Library)
+Encapsulates all library operations in one class.
+Uses a vector<Book> to store books dynamically, allowing easy addition and iteration.
+Keeps book availability status in a bool member for simple borrow/return logic.
+Book Struct (Book)
+Stores book ID, title, author, and availability.
+chosen as a struct because it is a simple data container with no behavior.
+
+Separation of Concerns
+
+Library logic is separate from the user interface, improving maintainability.
+Test programs are separate, allowing independent verification of each feature.
+
+Testing Approach
+
+add.cpp tests adding and displaying books.
+borrowreturn.cpp tests borrowing and returning functionality.
+search.cpp tests search functionality by title/author.
+
+This modular testing ensures each feature works correctly without interference from others.
+
+4. Compiling and Running the Main Program
+
+Open a terminal in the project root folder (pro/).
+Compile the main program with the library implementation:
+
+g++ main.cpp LIB/library.cpp -o main_app
+
+
+Run the compiled program:
+
+./main_app
+
+
+Usage:
+
+Follow the on-screen menu to add books, display all books, search for a book, borrow a book, or return a book.
+The program continues until you choose the exit option.
+
+5. Running Test Programs
+
+Each test program checks a specific feature. From the project root folder:
+
+Add Books Test
+
+g++ tests/add.cpp LIB/library.cpp -o test_add
+./test_add
+
+
+Borrow/Return Test
+
+g++ tests/borrowreturn.cpp LIB/library.cpp -o test_borrowreturn
+./test_borrowreturn
+
+
+Search Test
+
+g++ tests/search.cpp LIB/library.cpp -o test_search
+./test_search
